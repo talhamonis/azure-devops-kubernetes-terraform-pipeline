@@ -7,7 +7,7 @@ pool:
 stages:
 - stage: build
   jobs:
-  - job: FirstJob
+  - job: FirstJob_EchoProperties
     steps:
     - bash: echo Build First Job!
     - bash: echo $(PipelineLevelVariable)
@@ -19,9 +19,9 @@ stages:
     - bash: echo $(Build.ArtifactsStagingDirectory)
     - task: PublishBuildArtifacts@1
       inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'drop'
-      publishLocation: 'Container'
+       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+       ArtifactName: 'drop'
+       publishLocation: 'Container'
 
 
 # - stage: DevDeploy
