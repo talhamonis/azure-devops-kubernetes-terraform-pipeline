@@ -24,7 +24,7 @@ stages:
     - bash: echo QA Third Job!
 - stage: ProdDeploy
   dependsOn: 
-  - build
+  - DevDeploy
   - QADeploy
   jobs:
   - job: FourthJob
